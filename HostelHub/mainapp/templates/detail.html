@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ad.title }} - HostelHub</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ ad.title }}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Hostel Details</h2>
+        <p>{{ ad.description }}</p>
+        <p>City: {{ ad.city }}</p>
+        <p>Area: {{ ad.area }}</p>
+        <p>Type: {{ ad.hostel_type }}</p>
+        <h3>Contact Owner</h3>
+        <p>Phone: {{ ad.owner.contactdetail.phone_number }}</p>
+        <p>Email: {{ ad.owner.contactdetail.email }}</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 HostelHub</p>
+    </footer>
+</body>
+</html>

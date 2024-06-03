@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - HostelHub</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://static.vecteezy.com/system/resources/previews/002/375/040/original/modern-white-background-free-vector.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      header,
+      footer {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .signup-container {
+        background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent */
+        padding: 30px 50px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1),
+          0 0 15px rgba(93, 93, 93, 0.4); /* Added glow effect */
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #333333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        color: #333333;
+        margin-bottom: 5px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      footer p {
+        margin-top: 20px;
+        color: #666666;
+      }
+      .signup-link {
+        color: #4caf50;
+        text-decoration: none;
+      }
+
+      .signup-link:hover {
+        text-decoration: underline;
+      }
+
+      .account-text {
+        margin-top: 10px;
+        color: #666666;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Signup</h1>
+    </header>
+    <main>
+      <div class="signup-container">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="Phone" name="Phone" required />
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" required />
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="password2" name="password2" required />
+          </div>
+          
+          <button type="submit">Signup</button>
+          <div class="account-text">
+            If you already have an account,
+            <a href="/login" class="signup-link">login here</a>.
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 HostelHub</p>
+    </footer>
+  </body>
+</html>
